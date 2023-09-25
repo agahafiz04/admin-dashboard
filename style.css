@@ -1,0 +1,366 @@
+/* Variable Definitions */
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+:root {
+  --var-first-color: rgb(255, 245, 224);
+  --var-second-color: rgb(224, 207, 167);
+  --var-third-color: rgb(219, 180, 89);
+
+  --content-font-size-primary: 2rem;
+  --content-font-size-secondary: 1.5rem;
+}
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  color-scheme: light-dark;
+  font-family: "VT323", monospace;
+  font-size: 14px;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+img,
+picture,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Styling */
+.container {
+  transition: 1s;
+  min-height: 100%;
+
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 170px 1fr;
+}
+
+/* Header Part */
+
+.header {
+  grid-column: 2 / -1;
+  background-color: var(--var-first-color);
+
+  display: grid;
+  grid-template-columns: minmax(550px, 1.75fr) 1fr;
+  grid-template-rows: 1fr 1.5fr;
+
+  padding: 0px 50px;
+}
+
+.header i {
+  font-size: 1.5rem;
+}
+
+/* Header - Search */
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search input {
+  appearance: none;
+  outline: none;
+  display: block;
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-radius: 25px;
+  background-color: var(--var-second-color);
+  opacity: 0.75;
+  padding: 10px;
+}
+
+/* Header - Profile */
+.profile {
+  display: grid;
+  grid-template-columns: 75px 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile img {
+  width: 75px;
+  border-radius: 50%;
+  justify-self: center;
+}
+
+.profile .text-container p:nth-child(1) {
+  color: red;
+}
+
+.profile .text-container p:nth-child(2) {
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+/* Header - Notification */
+.notification {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-right: 15px;
+}
+
+.notification img {
+  width: 55px;
+  border-radius: 50%;
+}
+
+.notification p {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+/* Header - Button */
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.button-container button {
+  font-family: inherit;
+  cursor: pointer;
+  font-size: 2.4rem;
+  padding: 5px 30px;
+  width: max-content;
+  border-radius: 25px;
+  border: none;
+  background-color: var(--var-second-color);
+}
+
+.button-container button:hover {
+  --var-second-color: rgba(224, 162, 16, 0.5);
+  background-color: var(--var-second-color);
+}
+
+/* Sidebar Part */
+.sidebar {
+  grid-row: 1 / -1;
+  background-color: var(--var-third-color);
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 15px;
+  font-size: 2.5rem;
+}
+
+.sidebar ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.navigation ul li:hover,
+.setting ul li:hover {
+  transition: 0.5s;
+  --var-second-color: rgba(224, 162, 16, 0.5);
+  background-color: var(--var-second-color);
+}
+
+.sidebar ul li i {
+  font-size: 1.5rem;
+}
+
+.sidebar .icon ul li i {
+  font-size: 3.5rem;
+}
+
+/* Main Part */
+.main {
+  grid-row: 2 / -1;
+  grid-column: 2 / -1;
+  background-color: var(--var-second-color);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr minmax(400px, 1fr);
+  grid-template-rows: 350px 350px 1fr;
+  gap: 15px;
+
+  padding: 25px;
+}
+
+.main > * > h1 {
+  margin-bottom: 20px;
+}
+
+/* Content / Article Card*/
+.content {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+
+.card-container {
+  height: calc(100% - 50px);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.content .card {
+  background-color: rgb(247, 247, 247);
+  border-radius: 10px;
+  border-left: 15px solid var(--var-third-color);
+  padding: 25px;
+
+  display: grid;
+  grid-template-rows: 3.5fr 1fr;
+  justify-items: end;
+}
+
+.content .card .text-container h1 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.content .card .text-container p {
+  font-size: clamp(1.4rem, 70%, 2rem);
+  opacity: 0.5;
+}
+
+.content .card .icon-container {
+  display: flex;
+  gap: 15px;
+}
+
+.content .card .icon-container > i {
+  font-size: 1.75rem;
+  cursor: pointer;
+}
+
+/* Announcement */
+.announce {
+}
+
+.announce-container {
+  height: calc(100% - 50px);
+
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 0px 25px;
+}
+
+.announce-container > div:not(:last-child) {
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+}
+
+.announce-container h1 {
+  font-size: 1.75rem;
+}
+
+.announce-container p {
+  font-size: 1.3rem;
+}
+
+/* Trending */
+.trending {
+  grid-column: 3;
+}
+
+.trending-container {
+  height: calc(100% - 50px);
+
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-evenly;
+}
+
+.trending-container > div {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.trending-container img {
+  width: 50px;
+  border-radius: 50%;
+  justify-self: center;
+}
+
+.trending-container p:nth-child(1) {
+  font-size: 1.5rem;
+}
+
+.trending-container p:nth-child(2) {
+  font-size: 1.5rem;
+  opacity: 0.5;
+}
+
+@media only screen and (max-width: 1200px) {
+  .card-container {
+    overflow-y: scroll;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .container {
+    transition: 1s;
+    display: grid;
+    grid-template-columns: 100px 4fr;
+    grid-template-rows: 170px 1fr;
+  }
+
+  .sidebar ul li p {
+    display: none;
+  }
+
+  .sidebar ul li i {
+    transform: scale(1.1);
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    cursor: pointer;
+  }
+
+  .navigation ul li:hover,
+  .setting ul li:hover {
+    transition: 0.2s;
+    --var-second-color: rgba(255, 255, 255, 0.5);
+    background-color: var(--var-second-color);
+  }
+
+  .sidebar {
+    gap: 50px;
+  }
+}
