@@ -22,6 +22,8 @@
 html {
   color-scheme: light-dark;
   font-family: "VT323", monospace;
+
+  font-size: 15px;
 }
 
 body {
@@ -218,7 +220,7 @@ svg {
   height: calc(100% - 50px);
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 20px;
 }
 
@@ -335,13 +337,6 @@ svg {
   opacity: 0.5;
 }
 
-@media only screen and (max-width: 1200px) {
-  .card-container {
-    overflow-y: scroll;
-    padding-right: 20px;
-  }
-}
-
 @media only screen and (max-width: 1400px) {
   .container {
     transition: 1s;
@@ -375,5 +370,12 @@ svg {
 
   .sidebar {
     gap: 50px;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .card-container {
+    overflow-y: scroll;
+    padding-right: 20px;
   }
 }
