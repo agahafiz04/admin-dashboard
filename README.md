@@ -1,4 +1,4 @@
-# Sign Up Form
+# Admin Dashboard
 
 Admin Dashboard powered by The Odin Project
 
