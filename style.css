@@ -52,6 +52,9 @@ svg {
 /* Header Part */
 
 .header {
+  position: relative;
+  z-index: 3;
+
   grid-column: 2 / -1;
   background-color: var(--var-first-color);
 
@@ -157,6 +160,9 @@ svg {
 
 /* Sidebar Part */
 .sidebar {
+  position: relative;
+  z-index: 1;
+
   grid-row: 1 / -1;
   background-color: var(--var-third-color);
 
@@ -194,6 +200,9 @@ svg {
 
 /* Main Part */
 .main {
+  position: relative;
+  z-index: 3;
+
   grid-row: 2 / -1;
   grid-column: 2 / -1;
   background-color: var(--var-second-color);
